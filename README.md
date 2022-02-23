@@ -1,0 +1,1 @@
+Naver의 papago API를 활용하여 번역 웹사이트 구현
