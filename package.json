@@ -58,7 +58,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node nmt.js"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC"
