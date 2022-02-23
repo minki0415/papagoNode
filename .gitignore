@@ -1,0 +1,5 @@
+# Dependency directories
+node_modeules/
+
+# dotenv environment variable files
+.env
