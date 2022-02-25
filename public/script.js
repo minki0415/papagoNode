@@ -45,7 +45,7 @@ sourceTextArea.addEventListener('input', (event) => {
             const url = '/detectLangs'; //node 서버의 특정 url 주소
         
             xhr.onreadystatechange = () => {
-                if (xhr.readyState == 4 & xhr.status == 200) {
+                if (xhr.readyState == 4 && xhr.status == 200) {
         
                     // 서버의 응답 결과 확인(responseText : 응답에 포함된 텍스트)
                     // console.log(typeof xhr.responseText);
@@ -59,6 +59,13 @@ sourceTextArea.addEventListener('input', (event) => {
                     // console.log(typeof parseJsonToObject, parseJsonToObject);
         
                     const result = parseJsonToObject['message']['result'];
+                    const options = sourceSelect.options;
+
+                    for(let i = 0; i<options.length; i++) {
+                        if(options[i].value === result['srcLangType']){
+                            sourceSelect.selectedIndex = i
+                        }
+                    }
         
                     // 번역된 텍스트를 결과화면에 입력
                     targetTextArea.value = result['translatedText'];
@@ -87,6 +94,6 @@ sourceTextArea.addEventListener('input', (event) => {
         }else {
             alert('번역할 텍스트를 입력하세요.')
         }
-    }, 3000);
+    }, 1500);
 });
 
